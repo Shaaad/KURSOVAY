@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="200.0" style="-fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <bottom>
+        <TabPane fx:id="calculator" prefHeight="234.0" tabClosingPolicy="UNAVAILABLE" visible="false" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Обои">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="634.0">
+                     <children>
+                        <ChoiceBox fx:id="wallpaperSelector" layoutX="157.0" layoutY="10.0" prefWidth="150.0" />
+                        <Label layoutX="62.0" layoutY="37.0" text="или" />
+                        <RadioButton fx:id="wallpaperRadioSelect" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Размер обоев : " />
+                        <RadioButton fx:id="wallpaperRadioType" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" text="Введите свой" />
+                        <Label layoutX="150.0" layoutY="58.0" text="Ширина : " />
+                        <Label layoutX="364.0" layoutY="58.0" text="Длина : " />
+                        <TextField fx:id="wallpaperWidth" disable="true" editable="false" layoutX="221.0" layoutY="53.0" prefHeight="26.0" prefWidth="100.0" />
+                        <TextField fx:id="wallpaperLength" disable="true" editable="false" layoutX="428.0" layoutY="53.0" prefHeight="26.0" prefWidth="100.0" />
+                        <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onAction="#calculateWallpaper" text="Рассчитать" />
+                        <TextArea fx:id="wallpaperResult" editable="false" layoutX="95.0" layoutY="93.0" prefHeight="55.0" prefWidth="521.0" />
+                        <Label layoutX="15.0" layoutY="93.0" text="Результат : " />
+                        <Button layoutX="136.0" layoutY="156.0" mnemonicParsing="false" onAction="#clearWallpaper" text="Очистить" />
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Плитка">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="634.0">
+                            <children>
+                                <ChoiceBox fx:id="tileSelector" layoutX="157.0" layoutY="10.0" prefWidth="150.0" />
+                                <Label layoutX="62.0" layoutY="37.0" text="или" />
+                                <RadioButton fx:id="tileRadioSelect" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Размер плитки : " />
+                                <RadioButton fx:id="tileRadioType" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" text="Введите свой" />
+                                <Label layoutX="150.0" layoutY="58.0" text="Ширина : " />
+                                <Label layoutX="364.0" layoutY="58.0" text="Длина : " />
+                                <TextField fx:id="tileWidth" disable="true" editable="false" layoutX="221.0" layoutY="53.0" prefHeight="26.0" prefWidth="100.0" />
+                                <TextField fx:id="tileLength" disable="true" editable="false" layoutX="428.0" layoutY="53.0" prefHeight="26.0" prefWidth="100.0" />
+                                <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onAction="#calculateTile" text="Рассчитать" />
+                                <TextArea fx:id="tileResult" editable="false" layoutX="95.0" layoutY="93.0" prefHeight="55.0" prefWidth="521.0" />
+                                <Label layoutX="15.0" layoutY="93.0" text="Результат : " />
+                                <Button layoutX="136.0" layoutY="156.0" mnemonicParsing="false" onAction="#clearTile" text="Очистить" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Стеновые панели">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="634.0">
+                            <children>
+                                <ChoiceBox fx:id="panelSelector" layoutX="157.0" layoutY="10.0" prefWidth="150.0" />
+                                <Label layoutX="62.0" layoutY="37.0" text="или" />
+                                <RadioButton fx:id="panelRadioSelect" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Размер панелей : " />
+                                <RadioButton fx:id="panelRadioType" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" text="Введите свой" />
+                                <Label layoutX="150.0" layoutY="58.0" text="Ширина : " />
+                                <Label layoutX="364.0" layoutY="58.0" text="Длина : " />
+                                <TextField fx:id="panelWidth" disable="true" editable="false" layoutX="221.0" layoutY="53.0" prefHeight="26.0" prefWidth="100.0" />
+                                <TextField fx:id="panelLength" disable="true" editable="false" layoutX="428.0" layoutY="53.0" prefHeight="26.0" prefWidth="100.0" />
+                                <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onAction="#calculatePanel" text="Рассчитать" />
+                                <TextArea fx:id="panelResult" editable="false" layoutX="95.0" layoutY="93.0" prefHeight="55.0" prefWidth="521.0" />
+                                <Label layoutX="15.0" layoutY="93.0" text="Результат : " />
+                                <Button layoutX="136.0" layoutY="156.0" mnemonicParsing="false" onAction="#clearPanel" text="Очистить" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </bottom>
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="213.0" minWidth="0.0" prefWidth="213.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="424.0" minWidth="10.0" prefWidth="222.60000000000002" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="195.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Количество стен в комнате : " GridPane.rowIndex="1" />
+            <TextField fx:id="walls_count_text" prefHeight="26.0" prefWidth="332.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Высота комнаты : " GridPane.rowIndex="3" />
+            <TextField fx:id="height_text" prefHeight="26.0" prefWidth="177.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="submit" mnemonicParsing="false" onAction="#submit" text="Ввести данные" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="reset" mnemonicParsing="false" onAction="#reset" text="Очистить" GridPane.rowIndex="4" />
+            <Label text="Заполните данные  комнаты" underline="true" GridPane.columnIndex="1" />
+            <Label text="Количество отверстий в комнате : " GridPane.rowIndex="2" />
+            <TextField fx:id="holes_count_text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </top></BorderPane>
